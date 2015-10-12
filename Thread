@@ -1,0 +1,24 @@
+
+public class lesson4Activity16 {
+
+	public static void main(String[] args) {
+		
+		Timer tmr = new Timer(1_000_000_000);
+		System.out.println("Timer started. \'s\' to stop");
+		new Thread(tmr).start();
+		while (true) {
+			try {
+				if (System.in.read() == 's') {
+					tmr.stop();
+					break;
+					
+				}
+			} catch (java.io.IOException ex) {
+				System.err.println(ex);
+			}
+		}
+		System.out.println("Timer stopped.");
+
+	}
+
+}
