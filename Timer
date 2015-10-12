@@ -1,0 +1,17 @@
+public class Timer implements Runnable{
+	
+	
+	private boolean stopped;
+	private long delay;
+	public Timer (long delay) {
+		this.delay = delay;
+	}
+	public void stop() { stopped = true; }
+	public void run() {
+		while (! stopped ) {
+			java.util.Date time = new java.util.Date();
+			System.out.println(time);
+			for (long i = 0; i < delay; i++);
+		}
+	}
+}
