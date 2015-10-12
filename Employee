@@ -1,0 +1,33 @@
+import java.io.*;
+
+public class Lesson4Activity14 {
+
+	public static void main(String[] args) {
+
+		Employee emp = new Employee("Joshua Hester", "999-99-9999", "Developer");
+		
+		//save employee to file
+		try (FileOutputStream fout = new FileOutputStream("emp.data");
+				ObjectOutputStream objout = new ObjectOutputStream(fout);) {
+			    objout.writeObject(emp);
+			    objout.flush();
+			    System.out.println("Employee object written to file.");
+		}       catch (IOException ex){
+			System.err.println(ex);
+		}
+		
+		emp = null; // clear employee
+		
+		//read back employee from file
+		try (FileInputStream fin = new FileInputStream("emp.data");
+		ObjectInputStream objin = new ObjectInputStream(fin);) {
+		emp = (Employee) objin.readObject();	
+		System.out.println("Employee object read from file.");
+		} catch (IOException | ClassNotFoundException ex) {
+			System.err.println(ex);
+		}
+		System.out.println(emp);
+
+	}
+
+}
