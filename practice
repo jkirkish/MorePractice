@@ -1,0 +1,31 @@
+public class Lesson2Activity4 {
+
+	public static void main(String[] args) {
+		//Activity 4
+		byte b1 = (byte) 0b1111_1111;
+		int i1 = 127, i2 = -1;
+		boolean isb1i1Equal = b1 == i1;
+		boolean isb1i2Equal = b1 == i2;
+		
+		System.out.println("Is b1 equal to i1? " + isb1i1Equal);
+		System.out.println("Is b1 equal to i2? " + isb1i2Equal);
+
+		double result1 = 10.2 - 5 * 10 + i1++;
+		double result2 = (10.2 - 5) * 10 + ++i1;
+		System.out.println("result1 = " + result1);
+		System.out.println("result2 = " + result2);
+		
+		//Activity 5
+		String msg = "Java is Fun to Write and Drink!";
+		System.out.println(msg);
+		System.out.println(msg.toLowerCase());
+		System.out.println(msg.toUpperCase());
+		System.out.println("Length: " + msg.length());
+		System.out.println("First char: " + msg.charAt(0));
+		System.out.println("Last char: " + msg.charAt(msg.length()-1));
+		System.out.println("First i: " + msg.indexOf("i"));
+		System.out.println("Last i: " + msg.lastIndexOf("i"));
+		
+	}
+
+}
